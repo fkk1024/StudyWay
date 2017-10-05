@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <link rel="stylesheet" href="../assets/css/vue-demo.css">
+    <title>vue.extend</title>
+</head>
+<body>
+    <button onclick="history.go(-1)" id="btn_back">返回</button>
+    <h1>Vue.extend</h1>
+    <hr>
+    <author></author>
+
+    <script type="text/javascript">
+        var authorExtend = Vue.extend({
+            template:"<p><a :href='authorUrl'>{{authorName}}</a></p>",
+            data:function(){
+                return{
+                    authorName:'JSPang',
+                    authorUrl:'http://jspang.com'
+                }
+            }
+        });   
+       console.log(new authorExtend());
+       new authorExtend().$mount('author');
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+    <link rel="stylesheet" href="../../VueDemo/assets/css/vue-demo.css">
+  <script src="js/react.js"></script>
+  <script src="js/react-dom.js"></script>
+  <script src="js/browser.min.js"></script>
+</head>
+<body>
+<button onclick="history.go(-1)" id="btn_back">返回</button>
+    <h1>表单1</h1>
+    <hr>
+<div id="example">
+
+</div>
+
+<script type="text/babel">
+
+  var FormComponent = React.createClass({
+    getInitialState:function(){
+      return {content:'lucy'}
+    },
+    handleSubmit:function(event){
+      event.preventDefault();
+      console.log('submit event is triggered');
+    },
+    handleChange:function(event){
+      var value = event.target.value;
+      console.log("用户的输入为:"+value);
+      this.setState({content:value});
+    },
+    render:function(){
+      return <form onSubmit={this.handleSubmit}>
+        <input type="text" defaultValue="Michael"/>
+        <br/>
+        <input type="text"
+               onChange={this.handleChange}
+               value={this.state.content}/>
+        <br/>
+        <button type='submit'> 提交</button>
+      </form>
+    }
+  })
+
+  ReactDOM.render(
+  <FormComponent/>,
+  document.getElementById('example')
+  )
+
+
+</script>
+
+</body>
+</html>

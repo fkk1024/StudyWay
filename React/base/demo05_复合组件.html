@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="js/react.js"></script>
+  <script src="js/react-dom.js"></script>
+  <script src="js/browser.min.js"></script>
+</head>
+<body>
+<button onclick="history.go(-1)" id="btn_back">返回</button>
+    <h1>复合组件</h1>
+    <hr>
+<div id="example">
+
+</div>
+
+<script type="text/babel">
+
+  var TitleComponent = React.createClass({
+    render:function(){
+      return <h1> Tarena </h1>
+    }
+  })
+
+  var LinkComponent = React.createClass({
+    render:function(){
+      return <a href="javascript:alert('点了我一下')"> click me </a>
+    }
+  })
+
+  var MainComponent = React.createClass({
+    render:function(){
+      return <div>
+        <TitleComponent/>
+        <LinkComponent/>
+      </div>
+    }
+  })
+
+
+  ReactDOM.render(
+  <MainComponent/>,
+  document.getElementById('example')
+  )
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+    <link rel="stylesheet" href="../../VueDemo/assets/css/vue-demo.css">
+  <script src="js/react.js"></script>
+  <script src="js/react-dom.js"></script>
+  <script src="js/browser.min.js"></script>
+</head>
+<body>
+<button onclick="history.go(-1)" id="btn_back">返回</button>
+    <h1>表单2</h1>
+    <hr>
+<div id="example">
+
+</div>
+
+<script type="text/babel">
+  var MyForm = React.createClass({
+    getInitialState:function(){
+      return {
+        userName:'',
+        gender:'man',
+        isAgree:false
+        }
+    },
+    handleSubmit:function(event){
+      event.preventDefault();
+      console.log(this.state);
+    },
+    handleChangeName:function(event){
+      var value = event.target.value;
+      this.setState({userName:value});
+    },
+    handleChangeSex:function(event){
+      this.setState({gender:event.target.value})
+    },
+    handleChangeIsAgree:function(event){
+      this.setState({isAgree:event.target.checked})
+    },
+    render:function(){
+      return <form onSubmit={this.handleSubmit}>
+        <label htmlFor="user_name">输入用户名</label>
+        <input type="text"
+               onChange={this.handleChangeName}
+               value={this.state.userName}
+               id='user_name'/>
+        <br/>
+        <label htmlFor="user_sex">选择性别</label>
+        <select
+          onChange={this.handleChangeSex}
+          value={this.state.gender}
+          id="user_sex">
+          <option value="man">男</option>
+          <option value="woman">女</option>
+        </select>
+        <br/>
+        <label htmlFor="isAgree">是否同意</label>
+        <input
+          onChange={this.handleChangeIsAgree}
+          checked={this.state.isAgree}
+          type="checkbox"/>
+        <br/>
+        <button type='submit'>注册</button>
+      </form>
+    }
+  })
+
+  ReactDOM.render(
+  <MyForm/>,
+  document.getElementById('example')
+  )
+
+
+</script>
+
+</body>
+</html>

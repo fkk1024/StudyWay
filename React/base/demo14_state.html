@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="js/react.js"></script>
+  <script src="js/react-dom.js"></script>
+  <script src="js/browser.min.js"></script>
+</head>
+<body>
+<button onclick="history.go(-1)" id="btn_back">返回</button>
+    <h1>state</h1>
+    <hr>
+<div id="example">
+
+</div>
+
+<script type="text/babel">
+
+  var SwitchComponent = React.createClass({
+     getInitialState:function(){
+        return {switch:false}
+     },
+     handleClick:function(){
+        var switchState = this.state.switch;
+        switchState = !switchState;
+        this.setState({switch:switchState},function(){
+          console.log(this.state.switch);
+        })
+
+     },
+     render:function(){
+        return <button onClick={this.handleClick}>
+          {"状态为:"+this.state.switch}
+        </button>
+     }
+  })
+
+  ReactDOM.render(
+  <SwitchComponent/>,
+  document.getElementById('example')
+  )
+
+
+</script>
+
+</body>
+</html>

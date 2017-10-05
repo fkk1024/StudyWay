@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../VueDemo/assets/css/vue-demo.css">
+  <script src="js/react.js"></script>
+  <script src="js/react-dom.js"></script>
+  <script src="js/browser.min.js"></script>
+  <title></title>
+</head>
+<body>
+<button onclick="history.go(-1)" id="btn_back">返回</button>
+    <h1>小练习</h1>
+    <hr>
+<div id="example"></div>
+
+<script type="text/babel">
+
+  var AComponent = React.createClass({
+    handleChange:function(){
+      var content = this.refs.inputTxt.value;
+      console.log(content);
+      this.props.funcChange(content);
+    },
+    render:function(){
+      return <input
+              ref="inputTxt"
+              onChange={this.handleChange}
+              type='text'/>
+    }
+  })
+
+  var BComponent = React.createClass({
+    handleClick:function(){
+      //alert(this.props.content);
+      this.props.funcClick();
+    },
+    render:function(){
+      return <button onClick={this.handleClick}> click me </button>
+    }
+  })
+
+  var MainComponent = React.createClass({
+    getInitialState:function(){
+      return {result:''}
+    },
+    changeHandle:function(content){
+      this.setState({result:content},function(){
+        console.log("modified state is "+this.state.result);
+      });
+    },
+    changeClick:function(){
+      alert(this.state.result)
+    },
+    render:function(){
+      return <div>
+       <AComponent funcChange={this.changeHandle}/>
+       <br/>
+       <BComponent funcClick={this.changeClick} content={this.state.result}/>
+      </div>
+    }
+  })
+
+  ReactDOM.render(
+  <MainComponent/>,
+  document.getElementById('example')
+  )
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

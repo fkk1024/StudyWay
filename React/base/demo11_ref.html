@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="js/react.js"></script>
+  <script src="js/react-dom.js"></script>
+  <script src="js/browser.min.js"></script>
+</head>
+<body>
+<button onclick="history.go(-1)" id="btn_back">返回</button>
+    <h1>ref属性</h1>
+    <hr>
+<div id="example">
+
+</div>
+
+<script type="text/babel">
+
+  var MyComponent = React.createClass({
+    handleClick:function(){
+      console.log(this.refs.inputTxt.value);
+    },
+    render:function(){//ref相当于定义一个名称方便查找
+      return <div>
+        <input type="text" ref="inputTxt"/>
+        <br/>
+        <button onClick={this.handleClick}>clickMe</button>
+      </div>
+    }
+  })
+
+  ReactDOM.render(
+  <MyComponent/>,
+  document.getElementById('example')
+  )
+
+
+</script>
+
+</body>
+</html>

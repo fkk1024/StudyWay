@@ -1,0 +1,474 @@
+/*  
+
+    1. CSS 导入
+    2. 通用 Styles
+    3. html/css Styles
+    4. js Styles
+    5. 框架库 Styles
+    6. 公司 Styles
+    7. 软件 Styles
+    8. 媒体查询
+
+COLOR CODE
+    Background: rgba(0,0,0,0.5)
+--------------------------------------- */
+
+/* 
+http://fengkk.top 
+*/
+
+/* 1. CSS Imports
+    --------------------------------------- */
+    @import url(bootstrap.min.css);
+
+/* 2. 通用 Styles
+    --------------------------------------- */
+    body, html { overflow-x: hidden; }
+    body {
+        font-size: 1em;
+        line-height: 1.4;
+        font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;, sans-serif;
+        font-style: normal; 
+        -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+        -webkit-text-size-adjust: 100%;
+    }
+    ::-webkit-scrollbar {  
+        width: 5px;  
+        height: 4px;  
+        background-color: #F5F5F5;  
+    }  
+    /*定义滚动条轨道 内阴影+圆角*/  
+    ::-webkit-scrollbar-track {  
+        -webkit-box-shadow: inset 0 0 13px rgba(0,0,0,0.3);  
+        background: #fff ;  
+    }  
+    /*定义滑块 内阴影+圆角*/  
+    ::-webkit-scrollbar-thumb {  
+        border-radius: 30px;  
+        -webkit-box-shadow: inset 0 0 13px rgba(0,0,0,.3);  
+        background-color:rgba(0, 0, 0, 0.3);  
+    }  
+    ::-webkit-scrollbar-thumb:hover {  
+        border-radius:30px;  
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+        background-color:rgba(0, 0, 0, 0.5);  
+    }  
+    h1, h2, h3, h4, h5, h6, span, p, ul, li { 
+        font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    h3 { color: #FF6; padding: 10px 0 0 0; font-size: 16px; font-weight: bold; }
+
+    a { color: #FF6; }
+    a:hover, a:focus { color: white; }
+
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 1em 0;
+        padding: 0;
+    }
+
+    img {  vertical-align: middle; }
+
+    .blue {
+    	color: #4BF;
+    }
+
+    .green {
+    	color: #5F5;
+    }
+
+    #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff; /* change if the mask should have another color then white */
+        z-index: 99; /* makes sure it stays on top */
+    }
+    #status {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 50%; /* centers the loading animation horizontally one the screen */
+        top: 50%; /* centers the loading animation vertically one the screen */
+        background-image: url(../images/status.gif); /* path to your loading animation */
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: -100px 0 0 -100px; /* is width and height divided by two */
+    }
+    #main-wrapper {
+         overflow: hidden;
+    }
+    .navbar .navbar-nav {
+      display: inline-block;
+      float: none;
+    }
+
+    .navbar .navbar-collapse {
+      text-align: center;
+    }
+    .navbar {
+        border-radius: 0;
+        font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;, sans-serif;
+        font-size: 1.6em;
+    }
+    .navbar-default {
+        background: none;
+        border: none;
+    }
+    .nav>li { margin-right: 10px; }
+    .nav>li:last-child { margin-right: 0; }
+    .nav i {
+        display: block;
+        font-size: 36px;
+        padding: 15px 0 15px 0;
+    }
+    .nav .fa { font-size: 2em; }
+    .navbar-default .navbar-nav > li > a {
+        color: white;
+        background-color: rgba(0,0,0,0.5);
+        width: 120px;
+        height: 120px;
+    }
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+        color: yellow;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+        color: yellow;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .site-name {
+        cursor: pointer;
+        font-size: 46px;
+    }
+    .slogon { font-size: 24px; }
+
+    .templatemo-site-title { 
+        color: #fff !important;
+        text-align: center;
+        text-shadow: 0px 2px 3px rgba(0, 0, 0, 1);  
+        margin: 0 auto;
+        padding: 50px 0 100px 0;
+    }
+    .templatemo-site-title a, .templatemo-site-title a:hover { 
+    	color: #fff;
+    	text-decoration: none;
+    }
+    .active { display: block; }
+    .inactive {
+        position: absolute !important;
+        top: -9999px !important;
+        left: -9999px !important;
+    }
+    .image-section {  position: fixed; }
+    .image-container {  position: relative; }
+    .image-container img { position: absolute; }
+    .templatemo-content {
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .templatemo-content section {
+        font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;, sans-serif;
+        position: relative; 
+        overflow: hidden;
+        top: 0;
+        background-color: rgba(0,0,0,0.7);
+    }
+    .copyrights{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
+    .templatemo-content-wrapper { overflow: hidden; }
+    .childTitle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .childTitle i{
+        padding: 0 1%;
+        font-size: 6rem;
+    }
+    .templatemo-content h2 {
+        color: white;
+        font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;, sans-serif;
+    	margin-bottom: 15px;
+    }
+    .templatemo-content p, .templatemo-content li {
+        font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;, sans-serif;
+        color: white;
+        font-size: 14px;
+    }
+    .title_P_ele_html i{
+        font-size: 33px;
+    }
+    .title_P_ele_html span{
+        padding: 0 15px 10px 5px;
+        display: inline-block;
+        position: relative;
+    }
+    .title_P_ele_html ins{
+        text-decoration: none;
+        font-size: 20px;
+        color: #e4393c;
+        padding: 0 10px;
+    }
+    .title_P_ele_html strong{
+        padding: 0 10px;
+    }
+    .title_P_ele_html span b:nth-child(3){
+        display: inline-block;
+        position: absolute;
+        right: -15px;
+        bottom: 0;
+        border-bottom:  1px solid #fff;
+    }
+    .title_P_ele_html span b:nth-child(4){
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        bottom: -15px;
+        /*width: 100px;*/
+        /*height: 40px;*/
+        border-right: 1px solid #fff;
+    }
+    .title_P_ele_css i{
+        font-size: 33px;
+    }
+    .title_P_ele_css span{
+        padding: 0 15px 10px 5px;
+        display: inline-block;
+        position: relative;
+        left: -20px;
+    }
+    .title_P_ele_css ins{
+        text-decoration: none;
+        font-size: 20px;
+        color: #e4393c;
+        padding: 0 10px;
+    }
+    .title_P_ele_css strong{
+        padding: 0 10px;
+    }
+    .title_P_ele_css span b:nth-child(3){
+        display: inline-block;
+        position: absolute;
+        right: -15px;
+        bottom: 0;
+        width: 80px;
+        border-bottom:  1px solid #fff;
+    }
+    .title_P_ele_css span b:nth-child(4){
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        bottom: -15px;
+        height: 40px;
+        border-right: 1px solid #fff;
+    }
+    div[id^="carousel"] .slides{
+        margin: 20px;
+    }
+    div[id^="carousel"] .slides h3 i{
+        padding-right:10px;
+        color: #eee;
+    }
+    div[id^="carousel"] .slides .ST_div_code{
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 5px;
+        margin:10px auto;
+        background: transparent;
+        box-shadow: 0px 0px 15px #999;
+    }
+    div[id^="carousel"] .slides .showHTML{
+        width: 85%;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 5px;
+        box-shadow: 0px 0px 15px #999;
+        margin:10px auto;
+        text-align: center;
+    } 
+    div[id^="carousel"] .slides .showHTML .ST_span_title{
+        display: inline-block;
+        width: 85%;
+        border-bottom: 1px solid #eee;
+        border-radius: 10px;
+        padding: 5px;
+        margin:10px auto;
+        text-align: center;
+    } 
+    div[id^="carousel"] .slides .showHTML .showHTML_twoBox_inf{
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 5px;
+        box-shadow: 0px 0px 15px #999;
+        margin:10px auto;
+    }
+    .footer-wrapper { margin: 0 auto; }
+    .footer {
+        overflow: hidden;
+        bottom: 10px;
+        text-align: center;
+    }
+    .footer a { color: white; }
+    .footer a:hover { color: yellow; }
+    .footer .fa {
+        font-size: 1.8em;
+        line-height: 40px;
+        width: 40px;
+        height: 40px;
+        margin-top: 8px;
+        background-color: rgba(0,0,0,0.5);
+    }
+    #tm-copyright {
+    	margin-top: 10px;
+        font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial;, sans-serif; 
+        color: #fff; 
+        text-shadow: 0px 1px 2px rgba(0, 0, 0, 1);    
+        font-size: 13px;
+    }
+    #tm-copyright a, #tm-copyright a:hover { 
+    	color: #fff;
+    	text-decoration: none;
+    }
+
+/* 3.html/css Styles
+-------------------------------------------- */
+
+/* 4. js Styles
+--------------------------------------------- */
+
+/* 5. 框架库 Styles
+--------------------------------------------- */
+    #templatemo-page3-text{}
+    #templatemo-page3-text .library_div{
+        position: relative;
+    }
+    #templatemo-page3-text .library_div ul{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        margin-left:10%;
+        z-index: 11;
+        border-bottom:1px solid #eee; 
+    }
+    #templatemo-page3-text .library_div ul li{
+        float: left;
+        cursor: pointer;
+        text-align: center;
+        box-sizing: border-box;
+        border-left: 1px solid #eee;
+        font-size: 26px;
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+    #templatemo-page3-text .library_div ul li span{
+        display: inline-block;
+        width: 20px;
+        height: 10px;
+        transition: all 0.3s;
+        position: relative;
+        z-index: -1;
+    }
+    #templatemo-page3-text .library_div ul li:nth-child(1) span:nth-child(1){
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        transform: translate(15px,5px);
+    }
+    #templatemo-page3-text .library_div ul li:nth-child(1) span:nth-child(2){
+        border-right:  1px solid #fff;
+        border-top:  1px solid #fff;
+        transform: translate(-15px,-13px);
+    }
+    #templatemo-page3-text .library_div ul li span i{
+        font-size: 26px;
+    }
+    #templatemo-page3-text .library_div ul li:hover{
+       background: rgba(255,255,255,0.5);
+       color: #000;
+    }
+    #templatemo-page3-text .library_div ul li:nth-child(1){
+        border-left: none;
+    }
+    #templatemo-page3-text #iframe{
+        border: none;
+    }
+
+
+/* 6. 公司 Styles
+--------------------------------------------- */
+/* 7. 软件 Styles
+--------------------------------------------- */
+
+/* 8. Media Queries
+--------------------------------------------- */
+@media screen and (max-width: 991px) {
+    .navbar { font-size: 1.4em; }
+    .nav i { padding: 10px 0 10px 0; }
+    .nav .fa { font-size: 1.6em; }
+    .navbar-default .navbar-nav > li > a {
+        width: 100px;
+        height: 100px;
+    }
+
+    .footer {
+        overflow:hidden; 
+        position:static;
+        text-align: center;        
+    }
+    #tm-copyright { margin-left: 0; }
+}
+
+@media screen and (max-width: 767px) {
+    .nav i {
+        display: inline-block;
+        padding: 0 5px 0 0;
+    }
+    .navbar-default .navbar-nav > li > a {
+        width: 100%;
+        height: 60px;
+        background: none;
+    }
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+        background: none;
+    }
+    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+        background: none;
+    }
+    .navbar-default {
+        background: rgba(0,0,0,0.4);
+        border: none;
+    }
+}
+@media screen and (max-width: 678px) {
+   .childTitle{
+    font-size:2rem;
+   }
+   .childTitle i{
+        font-size: 5rem;
+    }
+}
+@media screen and (max-width: 567px) {
+   .childTitle{
+    font-size:1.5rem;
+   }
+   .childTitle i{
+        font-size: 4rem;
+    }
+}
+@media screen and (max-width: 456px) {
+   .childTitle{
+    font-size:1rem;
+   }
+   .childTitle i{
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+    <link rel="stylesheet" href="../../VueDemo/assets/css/vue-demo.css">
+  <script src="js/react.js"></script>
+  <script src="js/react-dom.js"></script>
+  <script src="js/browser.min.js"></script>
+</head>
+<body>
+<button onclick="history.go(-1)" id="btn_back">返回</button>
+    <h1>生命周期</h1>
+    <hr>
+<div id="example">
+
+</div>
+
+<script type="text/babel">
+
+  var LifeCycleComponent = React.createClass({
+    getInitialState:function(){
+      return {opacityValue:0};
+    },
+    componentDidMount:function(){
+      setInterval(function(){
+        var value = this.state.opacityValue;
+        value+=0.1;
+        if(value > 1)
+        {
+          value = 0;
+        }
+        this.setState({opacityValue:value},function(){
+          console.log(this.state.opacityValue);
+        });
+      }.bind(this),100);
+    },
+    render:function(){
+      return <div style={{opacity:this.state.opacityValue}}>
+        Hello LifeCycle
+      </div>
+    }
+  })
+
+  ReactDOM.render(
+  <LifeCycleComponent/>,
+  document.getElementById('example')
+  )
+
+
+</script>
+
+</body>
+</html>
