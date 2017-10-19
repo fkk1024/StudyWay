@@ -142,13 +142,18 @@ jQuery(function ($) {
 
     // 框架列表事件
     var li_length = $('#templatemo-page3-text .library li').length;
+    var li_length_App = $('#templatemo-page4-text .library li').length;
     var iframl_Url = [
-        './VueDemo/index.html', './React/index.html'
+        './VueDemo/index.html',
+        './React/index.html'
     ]
     $('#templatemo-page3-text .library li').css({
         'width': 100 / li_length + '%'
     })
-    $('#templatemo-page3-text .library li').on('mouseenter', function () {
+    $('#templatemo-page4-text .library li').css({
+        'width': 100 / li_length_App + '%'
+    })
+    $('[id^="templatemo-page"] .library li').on('mouseenter', function () {
         let ind = $(this).index();
         if (ind == 0) {
             $(this).css({
@@ -160,7 +165,7 @@ jQuery(function ($) {
             })
         }
     });
-    $('#templatemo-page3-text .library li').on('mouseout', function () {
+    $('[id^="templatemo-page"] .library li').on('mouseout', function () {
         let ind = $(this).index();
         if (ind == 0) {
             $(this).css({
@@ -172,8 +177,11 @@ jQuery(function ($) {
             })
         }
     });
+    $('[id^="templatemo-page"] .library li').click(function(){
+        console.log(111)
+    })
     // 库和框架点击选项动画
-    $('#templatemo-page3-text .library li').on('click', function () {
+    $('[id^="templatemo-page"] .library li').on('click', function () {
         let ind = $(this).index();
         $('#iframe').attr('src', $.trim(iframl_Url[ind]));
         $(this).children().first().css({

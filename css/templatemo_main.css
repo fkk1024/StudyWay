@@ -403,72 +403,128 @@ http://fengkk.top
     }
 
 
-/* 6. 公司 Styles
+/* 6. 微信 Styles
 --------------------------------------------- */
-/* 7. 软件 Styles
---------------------------------------------- */
-
-/* 8. Media Queries
---------------------------------------------- */
-@media screen and (max-width: 991px) {
-    .navbar { font-size: 1.4em; }
-    .nav i { padding: 10px 0 10px 0; }
-    .nav .fa { font-size: 1.6em; }
-    .navbar-default .navbar-nav > li > a {
-        width: 100px;
-        height: 100px;
+    #templatemo-page4-text{}
+    #templatemo-page4-text .library_div{
+        position: relative;
     }
-
-    .footer {
-        overflow:hidden; 
-        position:static;
-        text-align: center;        
+    #templatemo-page4-text .library_div ul{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        margin-left:10%;
+        z-index: 11;
+        border-bottom:1px solid #eee; 
     }
-    #tm-copyright { margin-left: 0; }
-}
-
-@media screen and (max-width: 767px) {
-    .nav i {
+    #templatemo-page4-text .library_div ul li{
+        float: left;
+        cursor: pointer;
+        text-align: center;
+        box-sizing: border-box;
+        border-left: 1px solid #eee;
+        font-size: 26px;
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+    #templatemo-page4-text .library_div ul li span{
         display: inline-block;
-        padding: 0 5px 0 0;
+        width: 20px;
+        height: 10px;
+        transition: all 0.3s;
+        position: relative;
+        z-index: -1;
     }
-    .navbar-default .navbar-nav > li > a {
-        width: 100%;
-        height: 60px;
-        background: none;
+    #templatemo-page4-text .library_div ul li:nth-child(1) span:nth-child(1){
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        transform: translate(15px,5px);
     }
-    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-        background: none;
+    #templatemo-page4-text .library_div ul li:nth-child(1) span:nth-child(2){
+        border-right:  1px solid #fff;
+        border-top:  1px solid #fff;
+        transform: translate(-15px,-13px);
     }
-    .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-        background: none;
+    #templatemo-page4-text .library_div ul li span i{
+        font-size: 26px;
     }
-    .navbar-default {
-        background: rgba(0,0,0,0.4);
+    #templatemo-page4-text .library_div ul li:hover{
+       background: rgba(255,255,255,0.5);
+       color: #000;
+    }
+    #templatemo-page4-text .library_div ul li:nth-child(1){
+        border-left: none;
+    }
+    #templatemo-page4-text #iframe{
         border: none;
+    }    
+/* 7. 公司 Styles
+--------------------------------------------- */
+/* 8. 软件 Styles
+--------------------------------------------- */
+
+/* 9. Media Queries
+--------------------------------------------- */
+    @media screen and (max-width: 991px) {
+        .navbar { font-size: 1.4em; }
+        .nav i { padding: 10px 0 10px 0; }
+        .nav .fa { font-size: 1.6em; }
+        .navbar-default .navbar-nav > li > a {
+            width: 100px;
+            height: 100px;
+        }
+
+        .footer {
+            overflow:hidden; 
+            position:static;
+            text-align: center;        
+        }
+        #tm-copyright { margin-left: 0; }
     }
-}
-@media screen and (max-width: 678px) {
-   .childTitle{
-    font-size:2rem;
-   }
-   .childTitle i{
-        font-size: 5rem;
+
+    @media screen and (max-width: 767px) {
+        .nav i {
+            display: inline-block;
+            padding: 0 5px 0 0;
+        }
+        .navbar-default .navbar-nav > li > a {
+            width: 100%;
+            height: 60px;
+            background: none;
+        }
+        .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+            background: none;
+        }
+        .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+            background: none;
+        }
+        .navbar-default {
+            background: rgba(0,0,0,0.4);
+            border: none;
+        }
     }
-}
-@media screen and (max-width: 567px) {
-   .childTitle{
-    font-size:1.5rem;
-   }
-   .childTitle i{
-        font-size: 4rem;
+    @media screen and (max-width: 678px) {
+       .childTitle{
+        font-size:2rem;
+       }
+       .childTitle i{
+            font-size: 5rem;
+        }
     }
-}
-@media screen and (max-width: 456px) {
-   .childTitle{
-    font-size:1rem;
-   }
-   .childTitle i{
-        font-size: 3rem;
+    @media screen and (max-width: 567px) {
+       .childTitle{
+        font-size:1.5rem;
+       }
+       .childTitle i{
+            font-size: 4rem;
+        }
     }
-}
+    @media screen and (max-width: 456px) {
+       .childTitle{
+        font-size:1rem;
+       }
+       .childTitle i{
+            font-size: 3rem;
+        }
+    }
